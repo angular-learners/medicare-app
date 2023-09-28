@@ -1,0 +1,43 @@
+$whiteColor:#ffffff;
+
+.section-padding-sm {
+    padding: 80px 0;
+}
+
+.bg-dark-light {
+    background: #323232 !important;
+}
+.widgets.footer-widgets {
+    margin-top: -50px;
+}
+.bg-theme, .bg-dark, .bg-dark-light, .bg-secondary {
+    color: $whiteColor;
+}
+.widgets.footer-widgets .single-widget {
+    margin-top: 50px;
+}
+.widget-title {
+    color: $whiteColor;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+.widgets.footer-widgets .widget-quick-links ul li {
+    display: block;
+}
+.widgets.footer-widgets .single-widget ul li {
+    list-style: none;
+    font-family: "Raleway", sans-serif;
+}
+a {
+    color: $whiteColor;
+    text-decoration: underline;
+}
+a:hover{
+    color: #13bfb1;
+}

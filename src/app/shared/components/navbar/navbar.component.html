@@ -1,1 +1,21 @@
-<p>navbar works!</p>
+<p>
+    <mat-toolbar class="mat-toolbar">
+      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button> -->
+      <span>MediCare</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button (click)="navigateTo('create-account')" *ngIf="!(authService.isLoggedIn() | async)">
+        <mat-icon >app_registration</mat-icon>
+      </button>
+      <button mat-icon-button (click)="navigateTo('login')" *ngIf="!(authService.isLoggedIn() | async)">
+        <mat-icon>login</mat-icon>
+      </button>
+      <button mat-icon-button (click)="navigateTo('logout')" *ngIf="(authService.isLoggedIn() | async)">
+        <mat-icon>logout</mat-icon>
+      </button>
+      <button mat-icon-button  *ngIf="(authService.isLoggedIn() | async)">
+        <mat-icon> account_circle</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
