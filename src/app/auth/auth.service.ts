@@ -8,9 +8,9 @@ import { BehaviorSubject, Observable } from "rxjs";
 export class AuthService {
 
     constructor(){
-         this.getLoggedIn();
+         this.getLoggedInData();
     }
-    isLogged$=new BehaviorSubject<boolean>(false);
+   isLogged$=new BehaviorSubject<boolean>(false);
 
     isLoggedIn():Observable<boolean>{
         return this.isLogged$.asObservable();
@@ -18,11 +18,10 @@ export class AuthService {
      
     logout():void{
         localStorage.removeItem('isLoggedIn');
-       this.isLogged$.next(false);
+         this.isLogged$.next(false);
     }
 
-     getLoggedIn(){
-       const loggedInData= JSON.parse(localStorage.getItem('isLoggedIn') as any);
-        this.isLogged$.next(loggedInData);
+    private  getLoggedInData(){
+        this.isLogged$.next(JSON.parse(localStorage.getItem('isLoggedIn') as any));
      }
 }

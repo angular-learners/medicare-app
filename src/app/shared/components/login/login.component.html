@@ -5,7 +5,7 @@
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
       <p>
         <mat-form-field>
-          <input type="text" matInput placeholder="email" formControlName="email">
+          <input type="text" matInput placeholder="username" formControlName="username">
         </mat-form-field>
       </p>
       <p>
@@ -14,7 +14,7 @@
         </mat-form-field>
       </p>
       <div class="button">
-        <button type="submit" mat-raised-button color="primary">Login</button>
+        <button type="submit" mat-raised-button >Login</button>
       </div>
     </form>
     </mat-card-content>
