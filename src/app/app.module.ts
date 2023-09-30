@@ -12,6 +12,8 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
 import { FooterComponent } from './shared/components/footer/footer.component';
 
 import { SharedModule } from './shared/module/shared.module';
+import { HttpInterceptorService } from './shared/interceptors/http.interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,11 @@ import { SharedModule } from './shared/module/shared.module';
     BrowserAnimationsModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    { 
+      provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi:true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

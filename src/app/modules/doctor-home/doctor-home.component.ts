@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-doctor-home',
@@ -7,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class DoctorHomeComponent {
 
+  constructor(private userService:UserService){
+
+  }
+  getMessage(){
+      this.userService.welcome().subscribe(
+        {
+          next:(res:any)=>{
+            console.log(res)
+          },
+          error:(err:any)=>{
+            console.log(err);
+          }
+        }
+      )
+  }
 }

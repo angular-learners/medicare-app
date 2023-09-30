@@ -51,12 +51,12 @@ export class LoginComponent implements OnInit {
 
   submit() {
     const form = this.loginForm.getRawValue();
-    this.userService.login(form).subscribe(
+    this.authService.login(form).subscribe(
       {
         next: (res: any) => {
           console.log(res);
-          localStorage.setItem('isLoggedIn',JSON.stringify(true));
-          this.authService.isLogged$.next(true);
+          // localStorage.setItem('isLoggedIn',JSON.stringify(true));
+          // this.authService.isLogged$.next(true);
           this.loginRes=res;
           this.navigateByRole(this.loginRes);
            
