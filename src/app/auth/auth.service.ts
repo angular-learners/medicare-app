@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, tap } from "rxjs";
 import { Environment } from "../environments/environment";
@@ -14,6 +14,7 @@ export class AuthService {
     constructor(private http: HttpClient) {
         //this.getLoggedInData();
     }
+    
     // isLogged$ = new BehaviorSubject<boolean>(false);
 
     // isLoggedIn(): Observable<boolean> {

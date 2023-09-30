@@ -32,9 +32,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     SharedModule
   ],
   providers: [
-    { 
-      provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi:true
-    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

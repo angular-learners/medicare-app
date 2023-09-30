@@ -1,6 +1,6 @@
 import { Environment } from './../../environments/environment';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginRequest } from '../models/user.login.model';
 import { User } from '../models/user.model';
@@ -22,6 +22,7 @@ export class UserService {
     }
 
     createUserAccount(userAccountRequest: User) {
+      
         return this.http.post(`${Environment.BASE_URL}/createAccount`, userAccountRequest);
     }
 }
