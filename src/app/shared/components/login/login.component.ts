@@ -17,10 +17,10 @@ export class LoginComponent implements OnInit {
   loginRes!:LoginResponse;
   constructor(private router: Router,
     private authService: AuthService, private userService: UserService) {
+      
 
   }
-
-
+    
 
   ngOnInit(): void {
     this.onInitForm();
@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit {
           // localStorage.setItem('isLoggedIn',JSON.stringify(true));
           // this.authService.isLogged$.next(true);
           this.loginRes=res;
+          localStorage.setItem('user',JSON.stringify(this.loginRes));
           this.navigateByRole(this.loginRes);
            
         },

@@ -1,8 +1,13 @@
-export interface User{
-    firstName:string;
-    lastName:string;
+export interface User {
+    typeId: string;
+    firstName: string;
+    lastName: string;
     username: string;
-    password:string;
     email: string;
     role: string;
+    createdDate: string;
+    updatedDate: string
+    status: string;
+    active: string
+    password:string;
 }

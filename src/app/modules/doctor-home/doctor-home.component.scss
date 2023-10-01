@@ -1,0 +1,48 @@
+mat-accordion {
+    width: 100%;
+    max-height: calc(100vh - 64px);
+    overflow: auto;
+}
+
+mat-expansion-panel {
+    width: 100%;
+}
+
+.panel-content {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.sidenav-container {
+    height: 100%;
+}
+
+.mat-toolbar {
+    background-color: #37474f; /* Set your desired background color */
+    color: white;
+}
+.sidenav {
+    width: 250px;
+    background-color: #37474f; /* Set your desired background color */
+    color: white;
+}
+
+mat-list-item {
+    color: white;
+}
+
+mat-list-item:hover {
+    background-color: #455a64; /* Set your desired hover background color */
+}
+
+mat-sidenav-content {
+    padding: 16px;
+}
+.item-container {
+    display: flex;
+    align-items: center;
+}
+
+.item-name {
+    margin-left: 8px; /* Adjust the margin as needed */
+}

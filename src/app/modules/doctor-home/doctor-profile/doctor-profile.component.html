@@ -1,0 +1,71 @@
+<mat-card class="example-card w-50">
+    <mat-card-header>
+        <mat-card-title-group>
+
+            <mat-card-title>{{profile?.firstName}},{{profile?.lastName}}</mat-card-title>
+            <mat-card-subtitle>Doctor</mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/images/doctor-image.jpg">
+
+        </mat-card-title-group>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div class="fw-bold">
+            ID: {{profile?.typeId}}
+        </div>
+        <div class="fw-bold">
+            {{profile?.email}}
+        </div>
+        <div class="d-flex justify-content-end">
+            <button mat-raised-button class="custom-button" (click)="isUpdateProfile=!isUpdateProfile">
+                <mat-icon >edit</mat-icon>
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+
+<mat-card class="example-card w-50 mt-3" *ngIf="isUpdateProfile">
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title>Update Profile</mat-card-title>
+        </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="update-container">
+            <form [formGroup]="updateProfileForm" (ngSubmit)="updateProfile()">
+                <p>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input type="text" matInput placeholder="firstName" formControlName="firstName">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input type="text" matInput placeholder="lastName" formControlName="lastName">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input type="text" matInput placeholder="username" formControlName="username">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input type="password" matInput placeholder="Password" formControlName="password">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input type="text" matInput placeholder="email" formControlName="email">
+                    </mat-form-field>
+                </p>
+               
+                <div class="button">
+                    <button type="submit" class="w-100 custom-button" mat-raised-button color="primary">Update
+                        Profile</button>
+                </div>
+               
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>

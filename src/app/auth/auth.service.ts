@@ -54,7 +54,9 @@ export class AuthService {
         return this.http
             .post<any>(`${Environment.BASE_URL}/authenticate`, loginRequest)
             .pipe(tap((response: any) => {
-                this.setToken(response.token);
+                if(response){
+                    this.setToken(response.token);
+                }
             }));
     }
     

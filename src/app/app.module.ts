@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { SharedModule } from './shared/module/shared.module';
 import { HttpInterceptorService } from './shared/interceptors/http.interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DoctorProfileComponent } from './modules/doctor-home/doctor-profile/doctor-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     LandingComponent,
     NavbarComponent,
     ToolbarComponent,
-    FooterComponent
+    FooterComponent,
+    DoctorProfileComponent
   ],
   imports: [
     BrowserModule,

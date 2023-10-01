@@ -22,7 +22,24 @@ export class UserService {
     }
 
     createUserAccount(userAccountRequest: User) {
-      
         return this.http.post(`${Environment.BASE_URL}/createAccount`, userAccountRequest);
+    }
+
+    getDoctorMenus():Observable<any>{
+        return this.http.get("assets/json/doctor-menu.json");
+    }
+
+    getSuperAdminMenus():Observable<any>{
+        return this.http.get("assets/json/super-admin-menu.json");
+    }
+    getUserById(id:number):Observable<number>{
+        return this.http.get<number>(`${Environment.BASE_URL}/${id}`);
+    }
+    updateUserById(id:number,user:any):Observable<any>{
+        return this.http.put<any>(`${Environment.BASE_URL}/${id}`,user);
+    }
+
+    getAllUsers():Observable<User>{
+        return this.http.get<User>(`${Environment.BASE_URL}`);
     }
 }

@@ -1,0 +1,22 @@
+{
+    "doctorMenu":[
+        {
+            "name":"Settings",
+            "path":"",
+            "icon":"settings",
+            "description":""
+        },
+        {
+            "name":"My Profile",
+            "path":"my-profile",
+            "icon":"person",
+            "description":""
+        },
+        {
+            "name":"Add Address",
+            "path":"",
+            "icon":"location_city",
+            "description":""
+        }
+    ]
+}

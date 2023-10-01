@@ -11,10 +11,10 @@ const routes: Routes = [
   { path: MedicareRoutes.LANDING, component: LandingComponent },
   { path: MedicareRoutes.LOGIN, component: LoginComponent },
   { path: MedicareRoutes.CREATE_ACCOUNT, component: CreateAccountComponent },
-  {path: '',loadChildren:()=>import("./modules/admin-home/admin-home.module").then(m=>m.AdminHomeModule)},
+  {path: '',loadChildren:()=>import("./modules/admin-home/admin-home.module").then(m=>m.AdminHomeModule),canActivate:[AuthGuard]},
 {path: '',loadChildren:()=>import("./modules/doctor-home/doctor-home.module").then(m=>m.DoctorHomeModule),canActivate:[AuthGuard]},
-  {path: '',loadChildren:()=>import("./modules/patient-home/patient-home.module").then(m=>m.PatientHomeModule)},
-  {path: '',loadChildren:()=>import("./modules/super-admin-home/super-admin-home.module").then(m=>m.SuperAdminHomeModule)}
+  {path: '',loadChildren:()=>import("./modules/patient-home/patient-home.module").then(m=>m.PatientHomeModule),canActivate:[AuthGuard]},
+  {path: '',loadChildren:()=>import("./modules/super-admin-home/super-admin-home.module").then(m=>m.SuperAdminHomeModule),canActivate:[AuthGuard]}
 
 ];
 

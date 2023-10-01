@@ -1,1 +1,33 @@
-<p>super-admin-home works!</p>
+
+  
+
+  <mat-toolbar color="primary" class="mat-toolbar" style="margin-top: -11px !important;">
+    <button mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav" [mode]="isExpanded ? 'side' : 'over'" [opened]="isExpanded">
+      <mat-nav-list>
+        <!-- <mat-list-item (click)="toggleSidenav()">
+          <mat-icon>close</mat-icon>
+          <span>Close Menu</span>
+        </mat-list-item> -->
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let item of superAdminMenuList" (click)="toggleSidenav()">
+          <a mat-line routerLink="{{item.path}}">
+            <div class="item-container">
+                <mat-icon class="mat-18">{{item.icon}}</mat-icon>
+                <span class="item-name">{{ item.name }}</span>
+              </div>
+          </a>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

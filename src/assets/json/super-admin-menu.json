@@ -1,0 +1,16 @@
+{
+    "superAdminMenu":[
+        {
+            "name":"Settings",
+            "path":"",
+            "icon":"settings",
+            "description":""
+        },
+        {
+            "name":"Users",
+            "path":"users-list",
+            "icon":"person",
+            "description":""
+        }
+    ]
+}
